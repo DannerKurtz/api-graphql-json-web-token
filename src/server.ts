@@ -1,7 +1,6 @@
 import 'reflect-metadata';
-
 import { ApolloServer } from 'apollo-server';
-import './database/schemas/Tweet';
+import './database';
 import schemaFn from './schemas';
 
 const app = async () => {
