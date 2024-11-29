@@ -1,7 +1,8 @@
 import { Arg, Mutation, Query, Resolver } from 'type-graphql';
 import User from '../schemas/User';
 import MongoUser from '../database/schemas/User';
-import { hash } from 'bcrypt';
+import { hash } from 'bcryptjs';
+
 @Resolver(User)
 class UserController {
   @Query(() => [User], { name: 'users' })
