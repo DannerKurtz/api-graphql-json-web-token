@@ -6,11 +6,11 @@ interface Context {
   token?: string;
 }
 
-const AuthenticationAssurance: AuthChecker<Context> = ({
-  context,
-}: ResolverData<Context>): boolean => {
-  const authHeader = context.token;
-
+const AuthenticationAssurance: AuthChecker<Context> = (
+  context: ResolverData<Context>
+): boolean => {
+  const authHeader = context.context.token;
+  console.log(authHeader);
   if (!authHeader) return false;
 
   const [, token] = authHeader.split(' ');
